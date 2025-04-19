@@ -3,3 +3,7 @@ pyproject.toml
 __pycache__/
 .venv
 .venv/
+venv/
+venv
+.idea/
+idea/

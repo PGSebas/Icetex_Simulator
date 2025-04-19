@@ -139,29 +139,69 @@ Para ejecutar las pruebas unitarias, utilice el siguiente comando desde la raíz
 python -m unittest discover -s tests -p "test_*.py"
 ```
 
+## Ejecutable del proyecto
+
+### Pasos para ejecutar SimuladorIcetex.exe
+
+1. **Ubicación del archivo**
+   - Navegar a la carpeta dist dentro del proyecto:
+   ```batch
+   cd icetex_simulator_kivy\dist
+   ```
+
+2. **Verificar requisitos previos**
+   - Asegurarse de tener Python 3.12 instalado
+   - Todas las dependencias listadas en requirements.txt deben estar instaladas
+   - Windows debe tener las bibliotecas visuales de C++ instaladas
+
+3. **Ejecutar el programa**
+   - Doble clic en `SimuladorIcetex.exe`
+   - O desde la línea de comandos:
+   ```batch
+   SimuladorIcetex.exe
+   ```
+
+
 ## Estructura del Proyecto
 
 ```python
-└── src/
-|    ├── model/ 
-|    │   ├── Casos de Prueba.xlsx
-|    │   ├── __init__.py 
-|    │   ├── logic.py 
-|    │   └── exception.py 
-|    ├── view/
-|    │   ├── console
-|    |   |   └─ main.py
-|    │   ├── gui
-|    |   |   └─ kivy.py
-|    │   └── web
-|    |       └─ app.py
-|    └── controller/
-|        ├── __init__.py 
-|        ├── urls.py
-|        └── blueprints.py
-├── tests/
-|   └── test_logic.py 
+icetex_simulator_kivy/
+│
+├── assets/
+│   ├── icetex.ico
+│
+├── build/  # Carpeta generada por PyInstaller 
+│
+├── dist/
+│   ├── SimuladorIcetex.exe   
+│
+├── src/
+│   ├── controller/
+│   │   ├── __init__.py
+│   │   
+│   │
+│   ├── model/
+│   │   ├── __init__.py
+│   │   ├── Casos de Prueba.xlsx
+│   │   ├── exception.py
+│   │   └── logic.py
+│   │
+│   └── view/
+│       ├── console/
+│       │   └── main.py
+│       ├── gui/
+│       │   └── console_kivy.py
+│       └── web/
+│           └── app.py
+│
+├── test/
+│   └── test_logic.py
+│
 ├── .gitignore
-├── README.MD
-└── config.py
+├── config.py
+├── launch.py
+├── README.md
+├── requirements.txt
+└── SimuladorIcetex.spec
+
 ```
