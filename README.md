@@ -161,47 +161,61 @@ python -m unittest discover -s tests -p "test_*.py"
    SimuladorIcetex.exe
    ```
 
+## Ejecutable del proyecto para android 
+
+### Pasos para ejecutar SimuladorIcetex.exe
+
+1. **Descarga el repositorio completo**(si no lo has hecho):
+```batch
+git clone https://github.com/tu-usuario/tu-repositorio.git
+```
+2. **Copia el APK a tu dispositivo Android**:
+
+    - **Vía USB**: Conecta tu dispositivo y transfiere el archivo `IcetexSimulato-0.1-arm64-v8a_armeabi-v7a-debug.apk` desde la carpeta `bin/`.
+    - **Manualmente**: Descarga el repositorio como ZIP y copia el archivo `.apk` desde tu computadora.
+      
+3. **Instala el APK**:
+    - Abre el archivo `.apk` desde el explorador de archivos de tu dispositivo.
+    - Si aparece un mensaje de "Orígenes desconocidos", habilita la instalación de aplicaciones externas en:
+    `Ajustes > Aplicaciones > Orígenes desconocidos (o "Fuentes desconocidas")`
+3. **Ejecuta la aplicación**:
+
+    - Una vez instalada, abre la aplicación desde el cajón de aplicaciones de tu dispositivo.
 
 ## Estructura del Proyecto
 
 ```python
 icetex_simulator_kivy/
-│
-├── assets/
+├── assets
 │   ├── icetex.ico
-│
-├── build/  # Carpeta generada por PyInstaller 
-│
-├── dist/
-│   ├── SimuladorIcetex.exe   
-│
-├── src/
-│   ├── controller/
-│   │   ├── __init__.py
-│   │   
-│   │
-│   ├── model/
-│   │   ├── __init__.py
+│   └── icetexlogoapk.png
+├── bin
+│   └── IcetexSimulato-0.1-arm64-v8a_armeabi-v7a-debug.apk
+├── dist
+│   └── SimuladorIcetex.exe
+├── src
+│   ├── controller
+│   │   ├── blueprints.py
+│   │   ├── urls.py
+│   │   └── __init__.py
+│   ├── model
 │   │   ├── Casos de Prueba.xlsx
 │   │   ├── exception.py
-│   │   └── logic.py
-│   │
-│   └── view/
-│       ├── console/
-│       │   └── main.py
-│       ├── gui/
+│   │   ├── logic.py
+│   │   └── __init__.py
+│   └── view
+│       ├── console
+│       │   └── console_view.py
+│       ├── gui
 │       │   └── console_kivy.py
-│       └── web/
+│       └── web
 │           └── app.py
-│
-├── test/
-│   └── test_logic.py
-│
-├── .gitignore
+└── tests
+|   └── test_logic.py
+├── buildozer.spec
 ├── config.py
-├── launch.py
+├── main.py
 ├── README.md
 ├── requirements.txt
-└── SimuladorIcetex.spec
-
+├── SimuladorIcetex.spec
 ```
